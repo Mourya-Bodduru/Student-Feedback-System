@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('{% static "/assests/otp.avif" %}');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 77vh;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 10%;
+            margin-top: 10%;
+        }
+
+        button {
+            width: 150px;
+            padding: 10px;
+            background-color: rgb(226, 103, 103);
+            color: #fff;
+            border: 1 px solid rgb(83, 0, 0);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-left: 15%;
+        }
+
+        button:hover {
+            background-color: rgb(161, 0, 0);
+        }
+
+        .box {
+            height: 40VH;
+            width: 30%;
+            border: 5px solid black;
+            margin-left: 35%;
+            margin-top: 10%;
+        }
+        a{
+            color: white;
+        }
+        .position{
+            position: absolute;
+            margin-left: 5%;
+            top: 44%;
+        }
+        .position2{
+            position: absolute;
+            margin-left: 13%;
+            top: 44%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="col-12 box">
+        <h2>Deleting student data</h2>
+        {% for x in data %}
+        <p>Are you sure that you want to remove "{{x.username}}"</p>
+        <div class="col-12 d-flex">
+            <div class="col-6">
+                <button class="position"><a href="{% url 'admin_dashboard' %}">cancel</a></button>
+
+                <form action="{% url 'delete' x.id %}" method="POST">
+                    {% csrf_token %}
+                    &nbsp<button type="submit" class="position2">delete</button>
+                </form>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

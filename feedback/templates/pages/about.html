@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .heading {
+            font-variant: small-caps;
+            text-shadow: 2px 1px 2px rgb(65, 60, 137);
+            margin-top: 1;
+        }
+
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .about {
+            color: white;
+            font-variant: small-caps;
+            text-shadow: 2px 1px 3px black;
+            margin-left: 45%;
+            margin-top: 5px;
+        }
+
+        .row-1 {
+            background-color: rgb(29, 73, 109);
+            display: flex;
+            height: 70px;
+        }
+
+        .img1 {
+            border-radius: 50%;
+            margin-left: 5%;
+            margin-top: 2%;
+        }
+
+        .row-2 {
+            background-color: rgb(246, 239, 230);
+            height: 450px;
+        }
+
+        .position2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 5%;
+        }
+
+        .position3 {
+            font-variant: small-caps;
+            color: darkblue;
+            font-weight: 200;
+            font-size: 23px;
+            margin-top: 3%;
+        }
+
+        .position4 {
+            font-variant: small-caps;
+            color: black;
+            font-weight: 200;
+            font-size: 23px;
+            margin-top: 3%;
+        }
+
+        .row-3 {
+            background-color: darkgray;
+            height: 400px;
+        }
+
+        .position5 {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .footer {
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+            margin-left: 8%;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            width: 70px;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            text-transform: capitalize;
+            color: #ffffff;
+            color: #bbbbbb;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 8px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="col-12 d-flex" style="background-color: lightgray;height: 80px;">
+        <div class="col-6">
+            <h1 class="heading">student feedback management system</h1>
+        </div>
+        <div class="col-6">
+            <ul class="d-flex justify-content-evenly mt-4">
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li>|</li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li>|</li>
+                <li><a href="{% url 'login' %}">Student</a></li>
+                <li>|</li>
+                <li><a href="{% url 'admin_login' %}">Admin</a></li>
+                <li>|</li>
+                <li><a href="{% url 'contact' %}">contact us</a></li>
+
+            </ul>
+        </div>
+    </header>
+
+    <div class="col-12 row-1">
+        <h1 class="about">
+            about
+        </h1>
+    </div>
+
+    <div class="col-12 d-flex row-2">
+        <div class="col-5">
+            <img src="{% static '/assests/about_1.jpg' %}" alt="" width="70%" class="img1">
+        </div>
+        <div class="col-7">
+            <h1 class="position2">About feedback management system</h1>
+            <p class="position3">Online Student feedback system is which is helpful for college to do educational
+                improvements.
+                This project collects feedback from student. Student Feedback System for college students have
+                been developed which aims to rate and analyse the college faculty’s performance. This type of
+                Student Feedback system reduces the strenuous work of physically examining the feedback pages
+                of each and every student. The system also reduces the burden of efforts and burden of keeping
+                and maintaining the records on a manual base, it requires a lot of space and safety to keep up
+                such records. </p>
+        </div>
+    </div>
+
+    <div class="col-12 d-flex row-3">
+
+        <div class="col-7">
+            <p class="position4">
+                Student Feedback System is the web application project used for college. Now a day’s college ask
+                feedback for student about faculties how they are handle the class and some social oriented things. This
+                Student Feedback System for college students have been developed which aims to rate and analyse the
+                college faculty’s performance. This type of Student Feedback system reduces the strenuous work of
+                physically examining the feedback pages of each and every student.The system also reduces the burden of
+                efforts and burden of keeping and maintaining the records on a manual base, it requires a lot of space
+                and safety to keep up such records.Also the students feedbacks can be tempered for wrong reasons in case
+                of paper based feedbacks wherein this project will always ensure safety of feedbacks privacy. </p>
+        </div>
+
+        <div class="col-5">
+            <img src="{% static '/assests/sis.jpg' %}" alt="" width="90%" class="img1">
+        </div>
+
+    </div>
+    <h1 class="position5">..Student feedback system features..</h1>
+
+    <div class="col-12 d-flex row-4" style="height: 170px;">
+
+        <div class="col-6 d-flex" style="border: 2px solid black; border-radius: 15px;">
+            <img src="{% static '/assests/feature1.png' %}" alt="" width="30%" height="70%" class="mt-4">
+            <p class="mt-5" style="font-weight: 400;font-variant: small-caps;">Online student Feedback system is the web
+                based feedback collecting system from the students and provides
+                the automatic feedback report generation tool which is given by students.</p>
+        </div>
+        <div class="col-6 d-flex" style="border: 2px solid black; border-radius: 15px;">
+            <img src="{% static '/assests/feature2.png' %}" alt="" width="40%" height="70%" class="mt-4">
+            <p class="mt-5" style="font-weight: 400;font-variant: small-caps;">This project developed to provide
+                feedback in a quick and easy manner.
+                Using this Web App we can give feedback in online as fast as compare to the existing paper feedback
+                system.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <img src="{% static '/assests/feature3.jpg' %}" alt="" width="100%" class="img2">
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{% url 'homepage'%}">Home</a></li>
+                        <li><a href="{% url 'about'%}">About</a></li>
+                        <li><a href="{% url 'login'%}">Sign In</a></li>
+                        <li><a href="{% url 'contact'%}">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

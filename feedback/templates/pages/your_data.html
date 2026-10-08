@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yourData</title>
+    <style>
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your feedbacks..</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Teacher Name</th>
+                <th>Student Name</th>
+                <th>Department</th>
+                <th>Feedback</th>
+                <th>Rating</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in data1 %}
+            <tr>
+                <td>{{ user.tname }}</td>
+                <td>{{ user.sname }}</td>
+                <td>{{ user.dept }}</td>
+                <td>{{ user.feedback_text }}</td>
+                <td>{{ user.rating }}</td>
+                <td><a href="{% url 'feedback_delete' user.id %}">delete</a></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

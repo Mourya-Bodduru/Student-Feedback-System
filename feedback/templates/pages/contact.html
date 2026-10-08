@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+    <style>
+        a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .text-blk {
+            margin: 0;
+            line-height: 25px;
+            padding: 0;
+        }
+
+        .spilt {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mainImg {
+            width: 100%;
+            object-fit: cover;
+            height: 89vh;
+        }
+
+        .section {
+            background-color: #333333;
+            padding: 30px 100px;
+            height: 89vh;
+        }
+
+        .text-heading {
+            color: white;
+            font-size: 35px;
+            line-height: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .cardHead {
+            color: white;
+        }
+
+        input[type = submit] {
+            color: white;
+            padding: 10px;
+            background-color: #000000;
+            border-radius: 20px;
+            margin-left: 30%;
+        }
+        input[type = submit]:hover{
+            background-color: blue;
+            color: white;
+        }
+        .messageArea {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .fullName,
+        .email {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .heading {
+            font-variant: small-caps;
+            text-shadow: 2px 1px 2px rgb(65, 60, 137);
+            margin-top: 1;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .background-image {
+
+            background-color: lightgray;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .footer {
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+            margin-left: 8%;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            width: 70px;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            text-transform: capitalize;
+            color: #ffffff;
+            color: #bbbbbb;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 8px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+    <header class="col-12 d-flex" style="background-color: lightgray;height: 80px;">
+        <div class="col-6">
+            <h1 class="heading">student feedback management system</h1>
+        </div>
+        <div class="col-6">
+            <ul class="d-flex justify-content-evenly mt-4">
+                <li><a href="{% url 'homepage' %}">Home</a></li>
+                <li>|</li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li>|</li>
+                <li><a href="{% url 'login' %}">Student</a></li>
+                <li>|</li>
+                <li><a href="{% url 'admin_login' %}">Admin</a></li>
+                <li>|</li>
+                <li><a href="{% url 'contact' %}">contact us</a></li>
+
+            </ul>
+        </div>
+    </header>
+
+    <div class="background-image">
+        <div>
+            <div class="spilt">
+                <div>
+                    <img class="mainImg" src="{% static '/assests/sis.jpg' %}">
+                </div>
+                <div class="section">
+                    <p class="text-heading">
+                        Contact Me
+                    </p>
+                    <form action="{% url 'contact' %}" method="POST">
+                        {% csrf_token %}
+                        <div>
+                            <div>
+                                <p class="cardHead">
+                                    Full Name
+                                </p>
+                                <input class="fullName" name="name" type="text">
+                            </div>
+                            <div>
+                                <p class="cardHead">
+                                    Email Address
+                                </p>
+                                <input class="email" name="email" type="email">
+                            </div>
+                        </div>
+                        <div class="messageArea">
+                            <p class="cardHead">
+                                Message
+                            </p>
+                            <textarea class="message" cols="45" name="message" rows="9"></textarea>
+                        </div>
+                        <input type="submit" value="send message">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{% url 'homepage'%}">Home</a></li>
+                        <li><a href="{% url 'about'%}">About</a></li>
+                        <li><a href="{% url 'login'%}">Sign In</a></li>
+                        <li><a href="{% url 'contact'%}">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

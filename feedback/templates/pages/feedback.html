@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('{% static "/assests/feedback.jpg" %}');
+            background-repeat: no-repeat;
+            background-size:cover;
+            
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: transparent;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: skyblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 30%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: darkblue;
+        }
+
+        .heading {
+            font-variant: small-caps;
+            text-shadow: 2px 1px 2px rgb(65, 60, 137);
+            margin-top: 1;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="col-12 d-flex" style="background-color: lightgray;height: 80px;">
+        <div class="col-6">
+            <h1 class="heading">student feedback management system</h1>
+        </div>
+        <div class="col-6">
+            <ul class="d-flex justify-content-evenly mt-4">
+                <li><a href="">Home</a></li>
+                <li>|</li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li>|</li>
+                <li><a href="{% url 'login' %}">Student</a></li>
+                <li>|</li>
+                <li><a href="{% url 'admin_login' %}">Admin</a></li>
+                <li>|</li>
+                <li><a href="{% url 'contact' %}">contact us</a></li>
+
+            </ul>
+        </div>
+    </header>
+    <h1>Feedback Form</h1>
+    <form method="post" action="{% url 'feedback' %}">
+        {% csrf_token %}
+        <label for="teacher_name">Teacher Name:</label>
+        <input type="text" name="tname" required><br>
+
+        <label for="student_name">Student Name:</label>
+        <input type="text" name="sname" required><br>
+
+        <label for="department">Department:</label>
+        <select id="department" name="dept" required>
+            <option value="" disabled selected>Select Department</option>
+            <option value="CME">CME</option>
+            <option value="ECE">ECE</option>
+            <option value="MECH">MECH</option>
+            <option value="EEE">EEE</option>
+            <option value="CIVIL">CIVIL</option>
+        </select><br>
+
+        <label for="feedback">Feedback:</label><br>
+        <textarea name="feedback_text" rows="2" cols="30" required></textarea><br>
+
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating" required>
+            <option value="" disabled selected>Select Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+</body>
+
+</html>

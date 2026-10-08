@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .heading {
+            font-variant: small-caps;
+            text-shadow: 2px 1px 2px rgb(65, 60, 137);
+            margin-top: 1%;
+        }
+
+
+        li {
+            list-style-type: none;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            height: 500px;
+        }
+
+        body {
+            height: auto;
+        }
+
+        .card {
+            box-shadow: 0 2px 2px 3px black;
+            max-width: 400px;
+            font-family: arial;
+        }
+
+        .position {
+            text-align: center;
+            font-variant: small-caps;
+            color: black;
+            text-shadow: 1px 0 1px #FF0000;
+        }
+
+        .img1 {
+            margin-left: 10%;
+            border-radius: 40%;
+            border: 2px solid black;
+            box-shadow: 1px 4px 8px 2px rgba(0, 4, 255, 0.2);
+            margin-top: 3%;
+        }
+
+        .position2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 5%;
+        }
+
+        .position3 {
+            font-variant: small-caps;
+            color: black;
+            font-weight: 200;
+            font-size: 23px;
+            margin-top: 3%;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .footer {
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+            margin-left: 8%;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            width: 70px;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            text-transform: capitalize;
+            color: #ffffff;
+            color: #bbbbbb;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 8px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            background-color: #ffffff;
+        }
+        .button{
+            color: blue;
+        }
+     
+    </style>
+
+</head>
+
+<body>
+    <header class="col-12 d-flex" style="background-color: lightgray;height: 80px;">
+        <div class="col-6">
+            <h1 class="heading" style="margin-top: 2%;">student feedback management system</h1>
+        </div>
+        <div class="col-6">
+            <ul class="d-flex justify-content-evenly mt-4">
+                <li><a href="">Home</a></li>
+                <li>|</li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li>|</li>
+                <li><a href="{% url 'login' %}">Student</a></li>
+                <li>|</li>
+                <li><a href="{% url 'admin_login' %}">Admin</a></li>
+                <li>|</li>
+                <li><a href="{% url 'contact' %}">contact us</a></li>
+
+            </ul>
+        </div>
+    </header>
+
+    <div class="col-12 ">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static '/assests/2.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static '/assests/1.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static '/assests/3.jpg' %}" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div><br>
+    <h1 class="position">welcome to student feedback management system</h1><br>
+
+    <div class="col-12 d-flex justify-content-evenly">
+        <div class="col-4 card" style="border: 3px solid whitesmoke;">
+            <img src="{% static '\assests\fms.jpg' %}" alt="" width="100%" height="60%">
+            <h1 style="color:rgb(0, 0, 0);font-variant: small-caps;font-size: 20px;text-align: center;">feedback
+                management system</h1><br>
+            <p style="text-align: center;color:grey">A Student Information(SIS),student management system,school
+                administration software or student administration system is a management.</p>
+
+        </div>
+
+        <div class="col-4 card" style="border: 3px solid whitesmoke">
+            <img src="{% static '\assests\qms.jpeg' %}" alt="" width="100%" height="60%">
+            <h1 style="color:rgb(0, 0, 0);font-variant: small-caps;font-size: 20px;text-align: center;">faculty
+                management system</h1><br>
+            <p style="text-align: center;color:grey">Student information systems provide capabilities for registering
+                students in courses ; documenting grading,transcripts,results of student tests.</p>
+
+        </div>
+
+        <div class="col-4 card" style="border: 3px solid whitesmoke;">
+            <img src="{% static '\assests\sis.jpg' %}" alt="" width="100%" height="100%">
+            <h1 style="color:rgb(0, 0, 0);font-variant: small-caps;font-size: 20px;text-align: center;">questions
+                management system</h1><br>
+            <p style="text-align: center;color:grey">A SIS should not be confused with a learning mangement system or
+                virtual learning environment,when course aterials,assingments and assessments.</p>
+
+        </div>
+    </div><br><br>
+
+    <div class="col-12 d-flex" style="background-color: darkgrey;">
+        <div class="col-6">
+            <img src="{% static '/assests/want.jpg' %}" alt="" width="70%" height="90%" class="img1">
+        </div>
+        <div class="col-6">
+            <h1 class="position2">About student feedback system</h1>
+            <p class="position3">
+                The purpose of feedback in the assessment and learning process is to improve a student's performance -
+                not put a damper on it.
+                It is essential that the process of providing feedback is a positive, or at least a neutral, learning
+                experience for the student.
+                An Student Feedback System is an automatic feedback generation system that provides the proper feedback
+                to the teachers as per the
+                categories like always, poor, usually, very often, sometimes. In the existing system students can give
+                feedback about the lecturers
+                by doing manually....<a href="{% url 'about' %}" class="button">read more</a>
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{% url 'homepage'%}">Home</a></li>
+                        <li><a href="{% url 'about'%}">About</a></li>
+                        <li><a href="{% url 'login'%}">Sign In</a></li>
+                        <li><a href="{% url 'contact'%}">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.success-container {
+    text-align: center;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    fill: #3bb54a;
+    animation: scaleAndRotate 0.5s ease-in-out forwards;
+}
+
+@keyframes scaleAndRotate {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+h2 {
+    color: green;
+    margin-bottom: 10px;
+}
+
+</style></head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l6.6-6.6 1.4 1.4z"/>
+            </svg>
+        </div>
+        <h2>Success!</h2>
+    </div>
+</body>
+</html>
